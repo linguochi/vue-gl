@@ -13,6 +13,7 @@ import { setCameraSize } from './utilities';
 
 export default {
   mixins: [VglNamespace],
+  name: 'VglRenderer',
   props: {
     /** Name of the using camera. */
     camera: { type: name, required: true, validator: validateName },
@@ -70,7 +71,7 @@ export default {
     /**
      * Set camera for rendering the scene. If canvas is already mounted, also calculates view size
      * or aspect ratio.
-    */
+     */
     setCameraRef(camera) {
       this.cameraRef = camera;
       if (this.$el) {
@@ -195,25 +196,26 @@ export default {
     },
   },
   render(h) {
-    return h('div', [h('iframe', {
-      style: {
-        visibility: 'hidden',
-        width: '100%',
-        height: '100%',
-        marginRight: '-100%',
-        border: 'none',
-      },
-      on: {
-        load: (event) => {
-          event.target.contentWindow.addEventListener('resize', () => {
-            this.inst.setSize(this.$el.clientWidth, this.$el.clientHeight);
-            if (this.cameraRef) {
-              setCameraSize(this.cameraRef, this.$el.clientWidth, this.$el.clientHeight);
-              if (this.sceneRef) this.requestRender();
-            }
-          }, false);
+    return h('div', [
+      h('iframe', {
+        style: {
+          visibility: 'hidden',
+          width: '100%',
+          height: '100%',
+          marginRight: '-100%',
+          border: 'none',
         },
-      },
-    }, this.$slots.default)]);
+        on: {
+          load: (event) => {
+            event.target.contentWindow.addEventListener('resize', () => {
+              this.inst.setSize(this.$el.clientWidth, this.$el.clientHeight);
+              if (this.cameraRef) {
+                setCameraSize(this.cameraRef, this.$el.clientWidth, this.$el.clientHeight);
+                if (this.sceneRef) this.requestRender();
+              }
+            }, false);
+          },
+        },
+      }, this.$slots.default)]);
   },
 };
