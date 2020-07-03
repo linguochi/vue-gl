@@ -11,6 +11,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglBoxGeometry',
   props: {
     /** Width of the sides on the X axis. */
     width: { type: float, default: 1 },
