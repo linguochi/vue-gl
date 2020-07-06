@@ -22,4 +22,7 @@ export default {
       immediate: true,
     },
   },
+  render(h) {
+    return h('div');
+  },
 };
