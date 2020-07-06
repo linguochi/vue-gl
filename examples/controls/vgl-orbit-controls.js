@@ -12,7 +12,7 @@ export default {
   watch: {
     cmr: {
       handler(cmr) {
-        this.nextTick(() => {
+        this.$nextTick(() => {
           const controls = new OrbitControls(cmr, this.$parent.$el);
           controls.addEventListener('change', () => {
             this.$parent.requestRender();
