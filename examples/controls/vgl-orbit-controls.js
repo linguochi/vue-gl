@@ -9,7 +9,7 @@ export default {
   },
   computed: {
     cmr() {
-      return this.vglNamespace.cameras[this.camera];
+      return this.vglNamespace.cameras.hash[this.camera];
     },
   },
   watch: {
