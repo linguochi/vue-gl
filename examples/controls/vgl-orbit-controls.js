@@ -18,7 +18,7 @@ export default {
         this.$nextTick(() => {
           const controls = new OrbitControls(cmr, this.$parent.$el);
           controls.addEventListener('change', () => {
-            this.vglNamespace.update();
+            this.$parent.requestRender();
           });
         });
       },
