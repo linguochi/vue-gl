@@ -13,6 +13,7 @@ import { validateVector3 } from '../validators';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglArrowHelper',
   props: {
     /** Direction from origin. */
     dir: { type: vector3, validator: validateVector3 },

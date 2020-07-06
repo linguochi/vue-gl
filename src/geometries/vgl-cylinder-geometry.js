@@ -11,6 +11,7 @@ import { float, int, boolean } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglCylinderGeometry',
   props: {
     /** Radius of the cylinder at the top. */
     radiusTop: { type: float, default: 1 },

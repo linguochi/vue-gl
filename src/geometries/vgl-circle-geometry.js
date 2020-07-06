@@ -16,6 +16,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglCircleGeometry',
   props: {
     /** Radius of the circle. */
     radius: { type: float, default: 1 },

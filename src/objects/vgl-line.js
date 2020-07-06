@@ -12,6 +12,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3dWithMatarialAndGeometry],
+  name: 'VglLine',
   props: {
     /** Name of the geometry, representing the line segment(s). */
     geometry: { type: name, validator: validateName },

@@ -93,6 +93,7 @@ export default {
       default() { throw new Error('VueGL components must be wraped by VglNamespace component.'); },
     },
   },
+  name: 'VglTexture',
   props: {
     /** The path or URL to the file. This can also be a Data URI. */
     src: string,

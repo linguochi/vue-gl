@@ -16,6 +16,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglMaterialWithMap],
+  name: 'VglMeshLambertMaterial',
   props: {
     /** CSS style color of the material. */
     color: { type: color, default: '#fff' },

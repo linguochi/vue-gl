@@ -12,6 +12,7 @@ import { float, int, color } from '../types';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglPolarGridHelper',
   props: {
     /** The radius of the polar grid. This can be any positive number. */
     radius: { type: float, default: 10 },

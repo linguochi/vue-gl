@@ -11,6 +11,7 @@ import { boolean, color, float } from '../types';
 
 export default {
   mixins: [VglMaterial],
+  name: 'VglPointsMaterial',
   props: {
     /** CSS style color of the material. */
     color: { type: color, default: '#fff' },

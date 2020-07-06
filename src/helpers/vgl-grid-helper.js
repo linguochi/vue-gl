@@ -12,6 +12,7 @@ import { float, int, color } from '../types';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglGridHelper',
   props: {
     /** The size of the grid. */
     size: { type: float, default: 10 },
