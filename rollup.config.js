@@ -20,6 +20,7 @@ async function rollup() {
       require.resolve('vue/dist/vue.min'),
       require.resolve('three'),
       require.resolve('three/build/three.min'),
+      require.resolve('three/examples/jsm/controls/OrbitControls'),
       require.resolve('three/examples/fonts/helvetiker_regular.typeface.json'),
     ],
     dest: 'docs/js/vendor',
@@ -40,39 +41,39 @@ async function rollup() {
     plugins: [
       babel(),
       terser(),
-      doc({
-        test: /\/vgl-.+\.js$/,
-        prefix: 'components',
-        intro: ({ id }) => `---
-          \ngrand_parent: API / Components
-          \nparent: ${componentCategory(id)}
-          \nnav_order: ${componentName(id)}
-          \n---`,
-        outro: ({ id }) => {
-          try {
-            const exPath = `docs/_examples${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[1]}.vue`;
-            const exCode = readFileSync(exPath, 'utf8');
-            const exComponent = `${/([^/.]+)(\.[^./]+)?$/.exec(id)[1]}-example`;
-            return `## Example
-              \n<div class="code-example"><div class="max-width-1-2">
-                <${exComponent} class="aspect-1618-1000"></${exComponent}>
-              \n</div></div>\n\`\`\`vue\n{% raw %}${exCode}{% endraw %}\n\`\`\``;
-          } catch (e) {
-            return '';
-          }
-        },
-        index: (dir) => (dir === 'components' ? `---
-          \nhas_children: true
-          \nnav_order: C
-          \n---
-          \n# API / Components` : `---
-          \nparent: API / Components
-          \nhas_children: true
-          \nnav_order: ${pascalcase(/[^/]+$/.exec(dir)[0])}
-          \n---
-          \n# ${pascalcase(/[^/]+$/.exec(dir)[0])}`),
-        replace: { test: /^#\s+(\S*)/, replacement: (_, title) => `# ${pascalcase(title)}` },
-      }),
+      // doc({
+      //   test: /\/vgl-.+\.js$/,
+      //   prefix: 'components',
+      //   intro: ({ id }) => `---
+      //     \ngrand_parent: API / Components
+      //     \nparent: ${componentCategory(id)}
+      //     \nnav_order: ${componentName(id)}
+      //     \n---`,
+      //   outro: ({ id }) => {
+      //     try {
+      //       const exPath = `docs/_examples${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[1]}.vue`;
+      //       const exCode = readFileSync(exPath, 'utf8');
+      //       const exComponent = `${/([^/.]+)(\.[^./]+)?$/.exec(id)[1]}-example`;
+      //       return `## Example
+      //         \n<div class="code-example"><div class="max-width-1-2">
+      //           <${exComponent} class="aspect-1618-1000"></${exComponent}>
+      //         \n</div></div>\n\`\`\`vue\n{% raw %}${exCode}{% endraw %}\n\`\`\``;
+      //     } catch (e) {
+      //       return '';
+      //     }
+      //   },
+      //   index: (dir) => (dir === 'components' ? `---
+      //     \nhas_children: true
+      //     \nnav_order: C
+      //     \n---
+      //     \n# API / Components` : `---
+      //     \nparent: API / Components
+      //     \nhas_children: true
+      //     \nnav_order: ${pascalcase(/[^/]+$/.exec(dir)[0])}
+      //     \n---
+      //     \n# ${pascalcase(/[^/]+$/.exec(dir)[0])}`),
+      //   replace: { test: /^#\s+(\S*)/, replacement: (_, title) => `# ${pascalcase(title)}` },
+      // }),
       cp({ targets, hook: 'writeBundle' }),
     ],
   }, {
