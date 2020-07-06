@@ -104,36 +104,36 @@ async function rollup() {
       babel(),
       resolve(),
       terser({ mangle: { reserved: ['ObjectManipulator'] } }),
-      doc({
-        test: /(^|\/)examples(\/[^/]+)*\/vgl-[^/]+$/,
-        intro: ({ id }) => `---
-          \ngrand_parent: API / Example Components
-          \nparent: Example ${componentCategory(id)}
-          \nnav_order: ${componentName(id)}
-          \n---`,
-        outro: ({ id }) => {
-          try {
-            const exPath = `docs/_examples-ex${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[1]}.vue`;
-            const exCode = readFileSync(exPath, 'utf8');
-            const exComponent = `${/([^/.]+)(\.[^./]+)?$/.exec(id)[1]}-example`;
-            const jsPath = `/js/examples${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[0]}`;
-            return `## Example
-              \n<script src="${jsPath}"></script>
-              \n<div class="code-example"><div class="max-width-1-2">
-                <${exComponent} class="aspect-1618-1000"></${exComponent}>
-              \n</div></div>\n\`\`\`vue\n{% raw %}${exCode}{% endraw %}\n\`\`\``;
-          } catch (e) {
-            return '';
-          }
-        },
-        index: () => `---
-          \nparent: API / Example Components
-          \nhas_children: true
-          \nnav_order: ${componentCategory(path)}
-          \n---
-          \n# Example ${componentCategory(path)}`,
-        replace: { test: /^#\s+(\S*)/, replacement: (_, title) => `# ${pascalcase(title)}` },
-      }),
+      // doc({
+      //   test: /(^|\/)examples(\/[^/]+)*\/vgl-[^/]+$/,
+      //   intro: ({ id }) => `---
+      //     \ngrand_parent: API / Example Components
+      //     \nparent: Example ${componentCategory(id)}
+      //     \nnav_order: ${componentName(id)}
+      //     \n---`,
+      //   outro: ({ id }) => {
+      //     try {
+      //       const exPath = `docs/_examples-ex${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[1]}.vue`;
+      //       const exCode = readFileSync(exPath, 'utf8');
+      //       const exComponent = `${/([^/.]+)(\.[^./]+)?$/.exec(id)[1]}-example`;
+      //       const jsPath = `/js/examples${/((\/[^/.]+){2})(\.[^/.]+)?$/.exec(id)[0]}`;
+      //       return `## Example
+      //         \n<script src="${jsPath}"></script>
+      //         \n<div class="code-example"><div class="max-width-1-2">
+      //           <${exComponent} class="aspect-1618-1000"></${exComponent}>
+      //         \n</div></div>\n\`\`\`vue\n{% raw %}${exCode}{% endraw %}\n\`\`\``;
+      //     } catch (e) {
+      //       return '';
+      //     }
+      //   },
+      //   index: () => `---
+      //     \nparent: API / Example Components
+      //     \nhas_children: true
+      //     \nnav_order: ${componentCategory(path)}
+      //     \n---
+      //     \n# Example ${componentCategory(path)}`,
+      //   replace: { test: /^#\s+(\S*)/, replacement: (_, title) => `# ${pascalcase(title)}` },
+      // }),
       cp({ targets: [{ src: 'dist/examples', dest: ['docs/js', 'docs'] }], hook: 'writeBundle' }),
     ],
   })), {

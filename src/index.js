@@ -66,7 +66,6 @@ import VglCurvePath from './extras/vgl-curve-path';
 import VglCurve from './extras/vgl-curve';
 import VglShapeGeometry from './geometries/vgl-shape-geometry';
 import VglPolyhedronGeometry from './geometries/vgl-polyhedron-geometry';
-import VglOrbitControls from './controls/vgl-orbit-controls';
 
 export {
   VglNamespace,
@@ -137,5 +136,4 @@ export {
   VglPath,
   VglShapeGeometry,
   VglPolyhedronGeometry,
-  VglOrbitControls,
 };
