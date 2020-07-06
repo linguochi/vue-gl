@@ -13,6 +13,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglLight],
+  name: 'VglRectAreaLight',
   props: {
     /** Width of the light. */
     width: { type: float, default: 10 },

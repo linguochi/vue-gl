@@ -14,6 +14,7 @@ import { VglGeometryWithShapes } from '../mixins';
 
 export default {
   mixins: [VglGeometryWithShapes],
+  name: 'VglExtrudeGeometry',
   props: {
     /** The Shape names */
     shapes: { type: names, validator: validateNames },

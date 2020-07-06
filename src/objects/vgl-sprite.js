@@ -12,6 +12,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3dWithMatarial],
+  name: 'VglSprite',
   props: {
     /** Name of the material, defining the object's appearance. */
     material: { type: name, validator: validateName },

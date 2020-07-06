@@ -13,6 +13,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglCameraHelper',
   props: {
     /** Name of the camera to visualize. */
     camera: { type: name, required: true, validator: validateName },

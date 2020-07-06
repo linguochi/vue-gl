@@ -15,6 +15,7 @@ const fonts = Object.create(null);
 
 export default {
   mixins: [VglExtrudeGeometry],
+  name: 'VglTextGeometry',
   props: {
     /** The text that needs to be shown. */
     text: { type: string, default: '' },

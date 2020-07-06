@@ -10,6 +10,7 @@ import VglLine from './vgl-line';
 
 export default {
   mixins: [VglLine],
+  name: 'VglLineSegments',
   computed: {
     /** The THREE.LineSegments instance. */
     inst: () => new LineSegments(),

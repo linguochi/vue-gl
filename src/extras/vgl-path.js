@@ -13,6 +13,7 @@ import { validateVector2Array } from '../validators';
 
 export default {
   mixins: [VglCurvePath],
+  name: 'VglPath',
   props: {
     /** The array of points as a LineCurve. */
     path: { type: vector2Array, validator: validateVector2Array },

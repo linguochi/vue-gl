@@ -11,6 +11,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglMeshStandardMaterial],
+  name: 'VglMeshPhysicalMaterial',
   props: {
     /** ClearCoat level, from 0.0 to 1.0. */
     clearcoat: { type: float, default: 0 },

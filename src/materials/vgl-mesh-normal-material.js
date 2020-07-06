@@ -11,6 +11,7 @@ import { boolean } from '../types';
 
 export default {
   mixins: [VglMaterial],
+  name: 'VglMeshNormalMaterial',
   props: {
     /** Whether the material is affected by fog. */
     fog: boolean,

@@ -12,6 +12,7 @@ import { color } from '../types';
 
 export default {
   mixins: [VglLight],
+  name: 'VglHemisphereLight',
   props: {
     /** The light's ground color */
     groundColor: { type: color, default: '#fff' },

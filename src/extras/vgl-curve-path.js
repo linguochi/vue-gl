@@ -11,6 +11,7 @@ import { boolean } from '../types';
 
 export default {
   mixins: [VglCurve],
+  name: 'VglCurvePath',
   props: {
     /** Whether or not to automatically close the path. */
     autoClose: boolean,

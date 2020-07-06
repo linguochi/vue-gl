@@ -10,6 +10,7 @@ import VglLine from './vgl-line';
 
 export default {
   mixins: [VglLine],
+  name: 'VglLineLoop',
   computed: {
     /** The THREE.LineLoop instance. */
     inst: () => new LineLoop(),

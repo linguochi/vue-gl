@@ -13,6 +13,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglMaterialWithMap],
+  name: 'VglMeshDepthMaterial',
   props: {
     /** Whether the material is affected by fog. */
     fog: boolean,

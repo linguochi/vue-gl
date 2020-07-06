@@ -15,6 +15,7 @@ export default {
       default() { throw new Error('VueGL components must be wraped by VglNamespace component.'); },
     },
   },
+  name: 'VglGeometry',
   props: {
     /** Name of the component. */
     name: { type: name, required: true, validator: validateName },
