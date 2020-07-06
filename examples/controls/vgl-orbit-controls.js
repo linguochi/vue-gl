@@ -1,12 +1,15 @@
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { string } from '../../src/types';
 
 export default {
   inject: ['vglNamespace'],
   name: 'VglOrbitControls',
-  props: ['camera'],
+  props: {
+    camera: { type: string, default: 'c' },
+  },
   computed: {
     cmr() {
-      return this.vglNamespace.cameras.hash.c;
+      return this.vglNamespace.cameras[this.camera];
     },
   },
   watch: {
@@ -15,7 +18,7 @@ export default {
         this.$nextTick(() => {
           const controls = new OrbitControls(cmr, this.$parent.$el);
           controls.addEventListener('change', () => {
-            this.$parent.requestRender();
+            this.vglNamespace.update();
           });
         });
       },
