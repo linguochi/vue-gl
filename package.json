@@ -1,6 +1,6 @@
 {
   "name": "view-gl",
-  "version": "0.22.3",
+  "version": "0.22.4",
   "description": "Vue.js components rendering 3D graphics reactively via three.js",
   "keywords": [
     "Vue",
