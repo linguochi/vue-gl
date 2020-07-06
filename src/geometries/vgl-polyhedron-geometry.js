@@ -15,6 +15,7 @@ import { parseFloatArray, parseIntArray } from '../parsers';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglPolyhedronGeometry',
   props: {
     /** Array of points of the form [x1, y1, z1, x2, y2, z2, ...] */
     vertices: { type: floatArray, validator: validateFloatArray },

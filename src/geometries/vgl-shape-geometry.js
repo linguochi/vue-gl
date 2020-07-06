@@ -12,6 +12,7 @@ import { validateNames } from '../validators';
 
 export default {
   mixins: [VglGeometryWithShapes],
+  name: 'VglShapeGeometry',
   props: {
     /** The Shape names */
     shapes: { type: names, validator: validateNames },

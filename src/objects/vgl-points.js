@@ -12,6 +12,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3dWithMatarialAndGeometry],
+  name: 'VglPoints',
   props: {
     /** Name of the geometry, defining the object's structure. */
     geometry: { type: name, validator: validateName },

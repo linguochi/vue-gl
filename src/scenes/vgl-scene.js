@@ -13,6 +13,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglScene',
   props: {
     /** the color, near and far parameters of the scene's fog */
     fog,

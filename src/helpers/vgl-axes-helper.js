@@ -12,6 +12,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglAxesHelper',
   props: {
     /** Size of the lines representing the axes. */
     size: { type: float, default: 1 },

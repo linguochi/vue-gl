@@ -11,6 +11,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglCylinderGeometry],
+  name: 'VglConeGeometry',
   props: {
     /** Radius of the cone at the base. */
     radius: { type: float, default: 1 },

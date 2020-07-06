@@ -11,6 +11,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglTetrohedronGeometry',
   props: {
     /** Radius of the tetrahedron. */
     radius: { type: float, default: 1 },

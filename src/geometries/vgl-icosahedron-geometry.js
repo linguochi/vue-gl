@@ -11,6 +11,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglIcosahedronGeometry',
   props: {
     /** Radius of the icosahedron. */
     radius: { type: float, default: 1 },

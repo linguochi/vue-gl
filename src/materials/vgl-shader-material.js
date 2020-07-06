@@ -15,7 +15,7 @@ import { boolean, string, float } from '../types';
 
 export default {
   mixins: [VglMaterialWithMap],
-
+  name: 'VglShaderMaterial',
   props: {
     /**
      * Defines custom constants using `#define` directives within the GLSL code for both the vertex

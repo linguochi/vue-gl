@@ -21,6 +21,7 @@ export default {
       default() { throw new Error('VueGL components must be wraped by VglNamespace component.'); },
     },
   },
+  name: 'VglMaterial',
   props: {
     /** Name of the material. */
     name: { type: name, required: true, validator: validateName },

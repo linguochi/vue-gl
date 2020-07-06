@@ -11,6 +11,7 @@ import VglObject3d from '../core/vgl-object3d';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglGroup',
   computed: {
     /** The THREE.Group instance. */
     inst: () => new Group(),

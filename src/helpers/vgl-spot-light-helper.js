@@ -12,6 +12,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglSpotLightHelper',
   props: {
     /** If this is not the set the helper will take the color of the light. */
     color,

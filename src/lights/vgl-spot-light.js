@@ -12,6 +12,7 @@ import { validateVector3 } from '../validators';
 
 export default {
   mixins: [VglLight],
+  name: 'VglSpotLight',
   props: {
     /**
      * The distance from the light where the intensity is 0.

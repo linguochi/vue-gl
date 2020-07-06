@@ -12,6 +12,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglCamera],
+  name: 'VglPerspectiveCamera',
   props: {
     /** Zoom factor of the camera. */
     zoom: { type: float, default: 1 },
