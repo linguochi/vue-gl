@@ -10,6 +10,7 @@ import VglMeshPhongMaterial from './vgl-mesh-phong-material';
 
 export default {
   mixins: [VglMeshPhongMaterial],
+  name: 'VglMeshToonMaterial',
   computed: {
     /** The THREE.MeshToonMaterial instance. */
     inst: () => new MeshToonMaterial(),

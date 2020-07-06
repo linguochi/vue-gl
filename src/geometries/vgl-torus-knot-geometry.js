@@ -11,6 +11,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglTorusKnotGeometry',
   props: {
     /** Radius of the torus. */
     radius: { type: float, default: 1 },

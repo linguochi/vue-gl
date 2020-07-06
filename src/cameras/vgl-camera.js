@@ -16,6 +16,7 @@ import { validateVector3, validateSpherical, validateName } from '../validators'
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglCamera',
   props: {
     /**
      * Position in 3D space for the camera to point towards.

@@ -18,6 +18,7 @@ import {
  */
 
 export default {
+  name: 'VglObject3D',
   props: {
     /** The object's local position as a 3D vector. */
     position: { type: vector3, validator: validateVector3 },

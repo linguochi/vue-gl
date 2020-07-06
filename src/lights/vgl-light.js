@@ -11,6 +11,7 @@ import { color, float } from '../types';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglLight',
   props: {
     /** CSS style color of the light. */
     color: { type: color, default: '#fff' },

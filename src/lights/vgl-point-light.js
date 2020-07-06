@@ -10,6 +10,7 @@ import { float } from '../types';
 
 export default {
   mixins: [VglLight],
+  name: 'VglPointLight',
   props: {
     /**
      * The distance from the light where the intensity is 0.

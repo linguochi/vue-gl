@@ -13,6 +13,7 @@ import { validateVector2Array } from '../validators';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglLatheGeometry',
   props: {
     /** Array of Vector2s. The x-coordinate of each point must be greater than zero. */
     points: { type: vector2Array, required: true, validator: validateVector2Array },

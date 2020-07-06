@@ -12,6 +12,7 @@ import { validateName } from '../validators';
 
 export default {
   mixins: [VglObject3d],
+  name: 'VglBoxHelper',
   props: {
     /** Size of the lines representing the axes. */
     color: { type: color, default: '#ff0' },

@@ -10,6 +10,7 @@ import VglMaterial from './vgl-material';
 
 export default {
   mixins: [VglMaterial],
+  name: 'VglShadowMaterial',
   computed: {
     /** The THREE.ShadowMaterial instance. */
     inst: () => new ShadowMaterial(),

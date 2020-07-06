@@ -12,6 +12,7 @@ import { parseVector2Array } from '../parsers';
 
 export default {
   mixins: [VglPath],
+  name: 'VglShape',
   computed: {
     /** The THREE.Shape instance. */
     inst() {

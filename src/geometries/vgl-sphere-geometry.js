@@ -11,6 +11,7 @@ import { float, int } from '../types';
 
 export default {
   mixins: [VglGeometry],
+  name: 'VglSphereGeometry',
   props: {
     /** Sphere radius. */
     radius: { type: float, default: 1 },
